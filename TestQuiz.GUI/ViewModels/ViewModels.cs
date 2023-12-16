@@ -124,7 +124,6 @@ namespace TestQuiz.GUI.ViewModels
             {
                 TotalQuestionsAnswered = 1;
                 VerifyQuestionOfUser = QuizDataModels.verify(false);
-                TotalCorrectQuestions = 1;
             }
             QuestionVerified = true;
         }
