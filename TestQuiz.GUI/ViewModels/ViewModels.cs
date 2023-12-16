@@ -123,7 +123,12 @@ namespace TestQuiz.GUI.ViewModels
             if (!QuestionVerified)
             {
                 TotalQuestionsAnswered = 1;
-                VerifyQuestionOfUser = QuizDataModels.verify(false);
+                if (QuizDataModels.boolQuestion == false)
+                {
+                    VerifyQuestionOfUser = QuizDataModels.verify(false);
+                    TotalCorrectQuestions = 1;
+
+                }
             }
             QuestionVerified = true;
         }
@@ -134,8 +139,11 @@ namespace TestQuiz.GUI.ViewModels
             if (!QuestionVerified)
             {
                 TotalQuestionsAnswered = 1;
-                VerifyQuestionOfUser = QuizDataModels.verify(true);
-                TotalCorrectQuestions = 1;
+                if (QuizDataModels.boolQuestion == true)
+                {
+                    VerifyQuestionOfUser = QuizDataModels.verify(true);
+                    TotalCorrectQuestions = 1;
+                }
             }
             QuestionVerified = true;
         }
