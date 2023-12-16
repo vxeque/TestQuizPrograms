@@ -117,37 +117,54 @@ namespace TestQuiz.GUI.ViewModels
         // propiedad para verificar que la pregunta actual fue contestada
         private bool QuestionVerified { get; set; }
 
-        // invoca al metodo Verify de la clase QuizDataModels una vez que el usuario selecciono el boton
-        // de false y verifica si su respuesta es correcta
+        // Función que verifica una pregunta booleana falsa
         private void VerifyOfFalse()
         {
+            // Verifica si la pregunta aún no ha sido verificada
             if (!QuestionVerified)
             {
+                // Incrementa el contador de preguntas respondidas
                 TotalQuestionsAnswered = 1;
+
+                // Verifica si la pregunta del modelo es falsa
                 if (QuizDataModels.boolQuestion == false)
                 {
+                    // Verifica la respuesta del usuario utilizando el método 'verify(false)' del objeto QuizDataModels
                     VerifyQuestionOfUser = QuizDataModels.verify(false);
-                    TotalCorrectQuestions = 1;
 
+                    // Si la respuesta es correcta, incrementa el contador de preguntas correctas
+                    TotalCorrectQuestions = 1;
                 }
             }
+
+            // Marca la pregunta como verificada, independientemente del resultado de la verificación
             QuestionVerified = true;
         }
 
-        // invoca al metodo Verify de la clase QuizDataModels una vez que el usuario selecciono el boton
-        // de true y verifica si su respuesta es correcta
+
+        // Función que verifica una pregunta booleana verdadera
         private void VerifyOfTrue()
         {
+            // Verifica si la pregunta aún no ha sido verificada
             if (!QuestionVerified)
             {
+                // Incrementa el contador de preguntas respondidas
                 TotalQuestionsAnswered = 1;
+
+                // Verifica si la pregunta del modelo es verdadera
                 if (QuizDataModels.boolQuestion == true)
                 {
+                    // Verifica la respuesta del usuario utilizando el método 'verify(true)' del objeto QuizDataModels
                     VerifyQuestionOfUser = QuizDataModels.verify(true);
+
+                    // Si la respuesta es correcta, incrementa el contador de preguntas correctas
                     TotalCorrectQuestions = 1;
                 }
             }
+
+            // Marca la pregunta como verificada, independientemente del resultado de la verificación
             QuestionVerified = true;
         }
+
     }
 }
