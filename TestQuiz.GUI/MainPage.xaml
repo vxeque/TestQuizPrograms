@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestQuiz.GUI.MainPage"
+             Title="GeoQuiz">
+
+    <Grid
+        RowDefinitions="Auto, Auto, *"
+        ColumnDefinitions="*"
+        Padding="16">
+
+        <Frame 
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderColor="White"
+            Padding="10"
+            >
+
+            <VerticalStackLayout>
+
+                <Label
+                    Text="{Binding ShowQuestions}"
+                    FontSize="32"
+                    HorizontalOptions="Center" 
+                    Margin="8"
+                    Padding="0"
+                    BackgroundColor="Blue"/>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Button
+                        Text="Cierto"
+                        HorizontalOptions="Center" 
+                        Command="{Binding ButtonQuestionVerifyTrue}"
+                        />
+
+                    <Button
+                        Text="Falso"
+                        HorizontalOptions="Center"
+                        Command="{Binding ButtonQuestionVerifyFalse}"
+                        />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!--  -->
+        <HorizontalStackLayout  
+             Grid.Row="1"
+             Grid.Column="0"
+             Padding="20"
+             HorizontalOptions="Center">
+
+            <Button
+                    Text="Anterior"
+                    HorizontalOptions="Center"
+                    Padding="10"
+                    Command="{Binding ButtonPreviousQuestion}"
+                />
+
+            <Button
+                    Text="Siguiente"
+                    Padding="10"
+                    HorizontalOptions="Center" 
+                    Command="{Binding ButtonNextQuestion}"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout 
+            HorizontalOptions="Center" 
+            Grid.Row="2"
+            Grid.Column="0"
+            Padding="10">
+            <Label Text="{Binding VerifyQuestionOfUser}"
+             />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="3" Padding="30">
+            <Label Margin="10">
+                <MultiBinding StringFormat="Preguntas: {0}">
+                    <Binding Path="TotalQuestionsAnswered"/>
+                </MultiBinding>
+            </Label>
+
+            <Label Margin="10">
+                <MultiBinding StringFormat="Resp. correctas: {0}">
+                    <Binding Path="TotalCorrectQuestions"/>
+                </MultiBinding>
+            </Label>
+
+        </HorizontalStackLayout>
+
+    </Grid>
+</ContentPage>
