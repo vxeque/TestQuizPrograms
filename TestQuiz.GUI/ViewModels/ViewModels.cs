@@ -117,7 +117,8 @@ namespace TestQuiz.GUI.ViewModels
         // propiedad para verificar que la pregunta actual fue contestada
         private bool QuestionVerified { get; set; }
 
-        // invoca al metodo Verify una vez que el usuario selecciono el boton de false
+        // invoca al metodo Verify de la clase QuizDataModels una vez que el usuario selecciono el boton
+        // de false y verifica si su respuesta es correcta
         private void VerifyOfFalse()
         {
             if (!QuestionVerified)
@@ -133,7 +134,8 @@ namespace TestQuiz.GUI.ViewModels
             QuestionVerified = true;
         }
 
-        // invoca al metodo Verify una vez que el usuario selecciono el boton de true
+        // invoca al metodo Verify de la clase QuizDataModels una vez que el usuario selecciono el boton
+        // de true y verifica si su respuesta es correcta
         private void VerifyOfTrue()
         {
             if (!QuestionVerified)
