@@ -135,6 +135,10 @@ namespace TestQuiz.GUI.ViewModels
                     // Si la respuesta es correcta, incrementa el contador de preguntas correctas
                     TotalCorrectQuestions = 1;
                 }
+                else
+                {
+                    VerifyQuestionOfUser = QuizDataModels.verify(true);
+                }
             }
 
             // Marca la pregunta como verificada, independientemente del resultado de la verificación
@@ -159,6 +163,10 @@ namespace TestQuiz.GUI.ViewModels
 
                     // Si la respuesta es correcta, incrementa el contador de preguntas correctas
                     TotalCorrectQuestions = 1;
+                }
+                else
+                {
+                    VerifyQuestionOfUser = QuizDataModels.verify(true);
                 }
             }
 
